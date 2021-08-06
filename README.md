@@ -4,6 +4,8 @@ This is a summery of commands which you need to use to create a react app with
 * Prettier
 * EsLint
 
+You can find an example project in the `example-project` folder
+
 ## Create react app with TypeScript
 
 ```bash
@@ -111,8 +113,65 @@ Add the following line in `env`:
 },
 ```
 
+## Resolve conflicts
+
+### Missing file extension
+To resolve an error like
+
+```bash
+ESLint: Missing file extension for "./App"(import/extensions)
+```
+
+install `eslint-import-resolver-typescript`
+
+```bash
+npm install eslint-import-resolver-typescript
+```
+
+and add this to settings 
+
+```bash
+"settings": {
+    "import/resolver": {
+        "typescript": {} // this loads <rootdir>/tsconfig.json to eslint
+    },
+}
+```
+
+and add this to `"parserOptions"`
+
+```bash
+    "project": "./tsconfig.json"
+```
+
+### Missing file extension "tsx"
+
+To resolve an error like
+
+```bash
+ESLint: Missing file extension "tsx" for "./App"(import/extensions)
+```
+
+add this to your `rules` in `.eslintrc.json`
+
+```bash 
+"rules": {
+   "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+   ]
+}
+```
+
 ## Resources
 * https://create-react-app.dev/docs/adding-typescript/
 * https://medium.com/how-to-react/config-eslint-and-prettier-in-visual-studio-code-for-react-js-development-97bb2236b31a
 * https://prettier.io/docs/en/install.html
+* https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/parser/README.md
 
