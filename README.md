@@ -40,6 +40,7 @@ Select:
 * React 
 * Does your project use TypeScript No/Yes -> Yes
 * Browser
+* How would you like to define a style for your project? -> Use a popular style guide
 * Airbnb: https://github.com/airbnb/javascript
 * JSON 
 * install eslint-plugin-react -> Yes
