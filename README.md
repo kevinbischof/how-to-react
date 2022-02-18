@@ -129,7 +129,8 @@ install `eslint-import-resolver-typescript`
 npm install eslint-import-resolver-typescript
 ```
 
-and add this to settings 
+and add this to settings in `.eslintrc.json`
+if there is no "settings" then add it like "rules".
 
 ```bash
 "settings": {
