@@ -31,7 +31,7 @@ Open your `package.json` file and add
 
 ### Generate .eslintrc.json
 ```bash
-npx eslint --init
+npm init @eslint/config
 ```
 
 Select:
